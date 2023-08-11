@@ -2,7 +2,7 @@ name: 'publish'
 
 on: 
   repository_dispatch:
-    types: [publish_app]
+    types: [publish-app]
     
 jobs:
   create-release:
