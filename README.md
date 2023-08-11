@@ -10,6 +10,10 @@ As the project is written in [Tauri](https://tauri.app/) which provides [cross-p
 
 This repository has no use in development. It just calls the necessary actions to compile and release the client if the process is triggered.
 
+## Requirements
+
+The Repository needs a token called `GITHUB_TOKEN` set under `Settings -> Secrets and Variables -> Actions`. It needs write access to the Repository's Releases (Fine Grained Permission: Repository -> Contents -> Write).
+
 ## License
 
 The code is published under GPL 3, see [LICENSE](LICENSE), however this repository doesn't hold relevant information and the [Main Repository on Gitlab](https://gitlab.com/mathezirkel/mathezirkel-app/client) should be considered.
