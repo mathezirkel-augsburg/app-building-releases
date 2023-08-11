@@ -61,17 +61,8 @@ jobs:
         uses: swatinem/rust-cache@v2
         with:
           workspaces: './tauri-client-app/src-tauri -> target'
-      - name: install Trunk (MacOs)
-        if: matrix.platform == 'macos-latest'
-        run: wget -qO- https://github.com/thedodd/trunk/releases/download/v0.17.3/trunk-x86_64-apple-darwin.tar.gz | tar -xzf-
-      - name: install Trunk (Linux)
-        if: matrix.platform == 'ubuntu-20.04'
-        run: wget -qO- https://github.com/thedodd/trunk/releases/download/v0.17.3/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
-      - name: install Trunk (Windows)
-        if: matrix.platform == 'windows-latest'
-        run: |
-          wget https://github.com/thedodd/trunk/releases/download/v0.17.3/trunk-x86_64-pc-windows-msvc.zip -O trunk.zip
-          unzip trunk
+      - name: install Trunk
+        run: cargo install --locked trunk
       - name: install WASM Target 
         run: rustup target add wasm32-unknown-unknown
       - uses: tauri-apps/tauri-action@v0
