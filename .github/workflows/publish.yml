@@ -63,7 +63,7 @@ jobs:
           workspaces: './tauri-client-app/src-tauri -> target'
       - uses: tauri-apps/tauri-action@v0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_GITHUB_TOKEN }}
         with:
           projectPath: "./tauri-client-app"
           releaseId: ${{ needs.create-release.outputs.release_id }}
