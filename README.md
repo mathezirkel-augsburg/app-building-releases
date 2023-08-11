@@ -10,6 +10,21 @@ As the project is written in [Tauri](https://tauri.app/) which provides [cross-p
 
 This repository has no use in development. It just calls the necessary actions to compile and release the client if the process is triggered.
 
+The workflow can be triggered by the following `curl` command:
+
+```cmd
+curl -L \
+  -X POST \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer <YOUR-TOKEN>" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/repos/mathezirkel-augsburg/app-building-releases/dispatches \
+  -d '{"event_type":"publish-app","client_payload":{}}'
+```
+
+The Token that is used in this command needs the ability to trigger workflows (Fine Grained Permission: Repository -> Actions -> Write).
+The Token can be created under https://github.com/settings/tokens.
+
 ## Requirements
 
 The Repository needs a token called `RELEASE_GITHUB_TOKEN` set under `Settings -> Secrets and Variables -> Actions -> New repository secret`. It needs write access to the Repository's Releases (Fine Grained Permission: Repository -> Contents -> Write).
