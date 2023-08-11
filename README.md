@@ -22,7 +22,7 @@ curl -L \
   -d '{"event_type":"publish-app","client_payload":{}}'
 ```
 
-The Token that is used in this command needs the ability to trigger workflows (Fine Grained Permission: Repository -> Actions -> Write).
+The Token that is used in this command needs the ability to trigger workflows (Fine Grained Permission: Repository -> Contents -> Write).
 The Token can be created under https://github.com/settings/tokens.
 
 ## Requirements
