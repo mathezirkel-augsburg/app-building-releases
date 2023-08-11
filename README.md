@@ -13,6 +13,7 @@ This repository has no use in development. It just calls the necessary actions t
 ## Requirements
 
 The Repository needs a token called `RELEASE_GITHUB_TOKEN` set under `Settings -> Secrets and Variables -> Actions -> New repository secret`. It needs write access to the Repository's Releases (Fine Grained Permission: Repository -> Contents -> Write).
+The Token can be created under https://github.com/settings/tokens.
 
 ## License
 
