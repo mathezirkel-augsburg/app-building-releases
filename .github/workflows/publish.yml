@@ -66,6 +66,7 @@ jobs:
               with:
                   node-version: "20.6"
                   cache: "npm"
+                  cache-dependency-path: tauri-client-app/package-lock.json
             - name: Install frontend dependencies
               run: npm install --prefix tauri-client-app
             - uses: tauri-apps/tauri-action@v0
