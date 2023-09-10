@@ -68,7 +68,8 @@ jobs:
                   cache: "npm"
                   cache-dependency-path: tauri-client-app/package-lock.json
             - name: Install frontend dependencies
-              run: npm install --prefix tauri-client-app
+              working-directory: ./tauri-client-app
+              run: npm install
             - uses: tauri-apps/tauri-action@v0
               env:
                   GITHUB_TOKEN: ${{ secrets.RELEASE_GITHUB_TOKEN }}
