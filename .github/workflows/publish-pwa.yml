@@ -21,7 +21,6 @@ jobs:
               with:
                   path: tauri-client-app/dist/
     deploy:
-        if: github.event_name == 'push'
         runs-on: ubuntu-latest
         needs: build
         permissions:
