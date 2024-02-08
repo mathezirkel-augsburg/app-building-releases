@@ -18,7 +18,7 @@ jobs:
             - name: setup node
               uses: actions/setup-node@v3
               with:
-                  node-version: 16
+                  node-version: "20.6"
             - name: get version
               run: echo "PACKAGE_VERSION=$(node -p "require('./tauri-client-app/src-tauri/tauri.conf.json').package.version")" >> $GITHUB_ENV
             - name: create release
