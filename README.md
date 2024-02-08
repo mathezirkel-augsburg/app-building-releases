@@ -6,6 +6,15 @@ The main repository can be found [HERE](https://gitlab.com/mathezirkel/mathezirk
 
 As the project is written in [Tauri](https://tauri.app/) which provides [cross-plattform-building scripts and support](https://tauri.app/v1/guides/building/cross-platform) only for Github actions, this repository mainly leverages the convenient and powerful Github-Actions capabilities to build the project for all the platforms and release the compiled results.
 
+## Can this be used in the browser?
+
+YES. As of now, the app can also be used in the browser as a [PWA](https://web.dev/progressive-web-apps/).
+
+[https://mathezirkel-augsburg.github.io/app-building-releases](https://mathezirkel-augsburg.github.io/app-building-releases)
+![QR](qr.png)
+
+The featureset of app and PAW may diverge or stay equal in the future.
+
 ## What files do I need to install?
 
 For each OS, two choices of installer are provided:
