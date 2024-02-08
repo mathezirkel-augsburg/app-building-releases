@@ -1,0 +1,36 @@
+name: publish-pwa
+
+on:
+    repository_dispatch:
+        types: [publish-app]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Clone Code Repository
+              run: git clone -b main "https://gitlab.com/mathezirkel/mathezirkel-app/client" tauri-client-app
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: "20.6"
+                  cache: "npm"
+                  cache-dependency-path: ./tauri-client-app/package-lock.json
+            - name: Build NPM dependencies
+              run: npm run build --prefix tauri-client-app
+            - uses: actions/upload-pages-artifact@v2
+              with:
+                  path: tauri-client-app/dist/
+    deploy:
+        if: github.event_name == 'push'
+        runs-on: ubuntu-latest
+        needs: build
+        permissions:
+            pages: write # to deploy to Pages
+            id-token: write # to verify the deployment originates from an appropriate source
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v2
