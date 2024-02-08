@@ -16,7 +16,7 @@ jobs:
                   cache: "npm"
                   cache-dependency-path: ./tauri-client-app/package-lock.json
             - name: Build NPM dependencies
-              run: npm install && npm run build-pwa --prefix tauri-client-app
+              run: npm install --prefix tauri-client-app && npm run build-pwa --prefix tauri-client-app
             - uses: actions/upload-pages-artifact@v2
               with:
                   path: tauri-client-app/dist/
