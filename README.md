@@ -10,7 +10,9 @@ As the project is written in [Tauri](https://tauri.app/) which provides [cross-p
 
 YES. As of now, the app can also be used in the browser as a [PWA](https://web.dev/progressive-web-apps/).
 
-[https://mathezirkel-augsburg.github.io/app-building-releases](https://mathezirkel-augsburg.github.io/app-building-releases)
+[https://app.mathezirkel-augsburg.de/](https://app.mathezirkel-augsburg.de/)
+
+
 ![QR](qr.png)
 
 The featureset of app and PAW may diverge or stay equal in the future.
